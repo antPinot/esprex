@@ -13,7 +13,11 @@ const httpsOptions = {
 }
 
 http.createServer((req, res) => {
-    res.end('HTTP')
+    const newUrl = "https://localhost:7879"
+    res.writeHead(301, {
+        "Location" : newUrl
+    })
+    res.end()
 })
 .listen(envVariables.port.http)
 
