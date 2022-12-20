@@ -1,0 +1,19 @@
+{
+  "name": "esprex",
+  "version": "1.0.0",
+  "description": "Esprex project for the needs of nodejs TP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antPinot/esprex.git"
+  },
+  "author": "antPinot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antPinot/esprex/issues"
+  },
+  "homepage": "https://github.com/antPinot/esprex#readme"
+}
