@@ -4,7 +4,8 @@
   "description": "Esprex project for the needs of nodejs TP",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "set NODE_ENV=production&&node ./bin/www",
+    "dev" : "set NODE_ENV=development&&nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/antPinot/esprex/issues"
   },
-  "homepage": "https://github.com/antPinot/esprex#readme"
+  "homepage": "https://github.com/antPinot/esprex#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
