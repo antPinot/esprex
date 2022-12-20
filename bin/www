@@ -1,21 +1,23 @@
-console.log(`Projet démarré en ${process.env.NODE_ENV}`)
+const environment = process.env.NODE_ENV
+
+console.log(`Projet démarré en ${environment}`)
 
 const http =  require('http')
 const https =  require('https')
-const {readFileSync} = require('fs')
-const { resolve } = require('path')
+
+const envVariables = require(`../environment/env.${environment}`)
 
 const httpsOptions = {
-    cert : readFileSync(resolve('ssl', 'esprex.crt')),
-    key : readFileSync(resolve('ssl', 'esprex.key'))
+    cert : envVariables.security.cert,
+    key : envVariables.security.key
 }
 
 http.createServer((req, res) => {
     res.end('HTTP')
 })
-.listen(7878)
+.listen(envVariables.port.http)
 
 https.createServer(httpsOptions,(req, res) => {
     res.end('HTTPS')
 })
-.listen(7879)
+.listen(envVariables.port.https)
