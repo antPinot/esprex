@@ -4,6 +4,7 @@ console.log(`Projet démarré en ${environment}`)
 
 const http =  require('http')
 const https =  require('https')
+const app = require('../app')
 
 const envVariables = require(`../environment/env.${environment}`)
 
@@ -13,15 +14,14 @@ const httpsOptions = {
 }
 
 http.createServer((req, res) => {
-    const newUrl = "https://localhost:7879"
+    //console.log()
+    const newUrl = `https://${req.headers.host.split(':')[0]}:${envVariables.port.https}${req.url}`
     res.writeHead(301, {
-        "Location" : newUrl
+        Location : newUrl
     })
     res.end()
 })
 .listen(envVariables.port.http)
 
-https.createServer(httpsOptions,(req, res) => {
-    res.end('HTTPS')
-})
+https.createServer(httpsOptions, app)
 .listen(envVariables.port.https)
