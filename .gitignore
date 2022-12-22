@@ -4,3 +4,5 @@ ssl/*
 environment/*
 !environment/*~
 *.png
+test.js
+test2.js
