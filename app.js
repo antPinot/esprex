@@ -1,23 +1,27 @@
-const esprex = require('./core/esprex');
-const app = esprex();
-const fs = require('fs')
+const express = require ('express')
+const app = express()
+const {resolve} = require ('path')
 
-const index = fs.readFileSync('./index.html')
+//const index = fs.readFileSync('./index.html')
 
-app.get('/', (req, res) => {
-  res.end('Home Page');
+app.get('/index', (req, res) => {
+  console.log(req.url)
+  res.sendFile(resolve('public' , 'index.html'))
 });
 
 app.get('/contact', (req, res) => {
-  res.end('Contact Page');
+  console.log(req.url)
+  res.sendFile(resolve('public', 'contact.html'))
 });
 
-app.get('/index.html', (req, res) => {
-  res.end(index);
+app.get('/services', (req, res) => {
+  console.log(req.url)
+  res.sendFile(resolve('public', 'services.html'))
 });
 
 app.post('/contact', (req,res) => {
-  res.end('Votre formulaire a été soumis')
+  console.log(req.url)
+  res.end()
 })
 
 module.exports = app;
