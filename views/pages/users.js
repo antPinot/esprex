@@ -1,6 +1,10 @@
-const {users} = require ('../database/data.json')
+const {users} = require ('../../database/data.json')
 
-module.exports = `<table>
+const layout = require('../layout')
+
+module.exports = ` ${layout}
+
+<table>
 <tr>
   <th>Pseudo</th>
   <th>Email</th>
