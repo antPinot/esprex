@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+module.exports = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,4 +16,4 @@
         <li><a href="utilisateurs">Liste des utilisateurs</a></li>
     </ul>
 </body>
-</html>
+</html>`

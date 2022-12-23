@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+module.exports = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,4 +16,4 @@
     </form>
     <a href="index">Retour au menu</a>
 </body>
-</html>
+</html>`

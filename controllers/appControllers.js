@@ -4,22 +4,22 @@ const {resolve} = require('path')
 
 const indexController = (req, res) => {
     console.log(req.url)
-    res.sendFile(resolve('public' , 'index.html'))
+    res.send(require('../views/index'))
   }
 
 const contactController =  (req, res) => {
     console.log(req.url)
-    res.sendFile(resolve('public', 'contact.html'))
+    res.send(require('../views/contact'))
   }
 
 const serviceController = (req, res) => {
     console.log(req.url)
-    res.sendFile(resolve('public', 'services.html'))
+    res.send(require('../views/services'))
   }
 
 const utilisateurController = (req,res) => {
   console.log(req.url)
-  res.sendFile(resolve('public', 'utilisateurs.html'))
+  res.send(require('../views/users'))
 }
 
 const contactSubmitController = (req,res) => {
