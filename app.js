@@ -3,6 +3,7 @@ const app = express()
 const {resolve} = require ('path')
 const router = require('./routing/index')
 
+// Service des statiques
 app.use(express.static(resolve('static'), {index:false}))
 
 //Routing

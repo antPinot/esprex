@@ -1,5 +1,6 @@
 const {resolve} = require('path')
-const static = require('express').static
+
+// Contrôleurs de l'application
 
 const indexController = (req, res) => {
     console.log(req.url)
@@ -16,11 +17,14 @@ const serviceController = (req, res) => {
     res.sendFile(resolve('public', 'services.html'))
   }
 
+const utilisateurController = (req,res) => {
+  console.log(req.url)
+  res.sendFile(resolve('public', 'utilisateurs.html'))
+}
+
 const contactSubmitController = (req,res) => {
     console.log(req.url)
     res.end()
   }
 
-
-
-module.exports = {indexController, contactController, serviceController, contactSubmitController}
+module.exports = {indexController, contactController, serviceController, contactSubmitController, utilisateurController}
