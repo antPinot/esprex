@@ -1,3 +1,15 @@
+extends ../layout
+
+block content
+
+form(action="/contact", method="post")
+    label(for="")
+        input(type="text", name = "saisie")
+        button(type="submit") Envoyer 
+a(href="index") Retour au menu
+
+<!--
+
 const layout = require('../layout')
 
 module.exports = ` ${layout}
@@ -11,3 +23,4 @@ module.exports = ` ${layout}
     <a href="index">Retour au menu</a>
 </body>
 </html>`
+ -->

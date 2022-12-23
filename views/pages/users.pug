@@ -1,3 +1,19 @@
+extends ../layout 
+
+block content
+
+table 
+tr
+  th Pseudo
+  th Email
+
+each user in users
+  tr
+    td user.pseudo
+    td user.email
+
+<!--
+
 const {users} = require ('../../database/data.json')
 
 const layout = require('../layout')
@@ -17,3 +33,5 @@ ${users.map(({ pseudo, email }) => `
 `).join('')}
 </table>
 `
+
+-->
