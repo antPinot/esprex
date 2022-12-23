@@ -1,4 +1,5 @@
 const {resolve} = require('path')
+const static = require('express').static
 
 const indexController = (req, res) => {
     console.log(req.url)
@@ -19,5 +20,7 @@ const contactSubmitController = (req,res) => {
     console.log(req.url)
     res.end()
   }
+
+
 
 module.exports = {indexController, contactController, serviceController, contactSubmitController}

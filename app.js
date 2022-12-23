@@ -1,11 +1,11 @@
 const express = require ('express')
 const app = express()
 const {resolve} = require ('path')
-const appRoutes = require('./routing/app-routes')
-const apiRoutes = require('./routing/api-users.routes')
+const router = require('./routing/index')
 
 app.use(express.static(resolve('static'), {index:false}))
-app.use(appRoutes)
-app.use(apiRoutes)
+
+//Routing
+app.use(router)
 
 module.exports = app;
