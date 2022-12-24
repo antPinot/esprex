@@ -2,36 +2,14 @@ extends ../layout
 
 block content
 
-table 
-tr
-  th Pseudo
-  th Email
-
-each user in users
+  table 
   tr
-    td user.pseudo
-    td user.email
+    th Pseudo
+    th Email
 
-<!--
-
-const {users} = require ('../../database/data.json')
-
-const layout = require('../layout')
-
-module.exports = ` ${layout}
-
-<table>
-<tr>
-  <th>Pseudo</th>
-  <th>Email</th>
-</tr>
-${users.map(({ pseudo, email }) => `
-  <tr>
-    <td>${pseudo}</td>
-    <td>${email}</td>
-  </tr>
-`).join('')}
-</table>
-`
-
--->
+  each user in users
+    tr
+      td= user.pseudo
+      td= user.email
+  
+  a(href="index") Retour au menu

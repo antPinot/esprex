@@ -2,7 +2,7 @@
 
 const indexController = (req, res) => {
     console.log(req.url)
-    res.render('pages/home.pug')
+    res.render('pages/index.pug')
   }
 
 const contactController =  (req, res) => {
