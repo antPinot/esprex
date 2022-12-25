@@ -2,14 +2,19 @@ extends ../layout
 
 block content
 
-  table 
-  tr
-    th Pseudo
-    th Email
-
-  each user in users
-    tr
-      td= user.pseudo
-      td= user.email
+  table(class='table table-striped')
+    thead
+      tr
+        each enTete in Object.keys(users[0])
+          th= enTete
+    
+    tbody
+      each user in users
+        tr
+          td= user._id
+          td= user.pseudo
+          td= user.email
+          each detail in Object.entries(user.address)
+            td= detail[1]
   
   a(href="index") Retour au menu
